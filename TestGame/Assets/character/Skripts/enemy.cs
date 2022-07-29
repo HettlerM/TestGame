@@ -17,12 +17,12 @@ public class enemy : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        if(Vector2.Distance(transform.position, rb.position) >= aggrorange)
-        {Vector3 direction = player.position - transform.position;
+        
+        Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;
         direction.Normalize();
-        movement = direction;}
+        movement = direction;
     }
     private void FixedUpdate() {
         moveCharacter(movement);
